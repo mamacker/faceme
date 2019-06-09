@@ -4,8 +4,12 @@ import * as fs from 'fs';
 import * as cv from 'opencv';
 
 const minConfidence = 0.5;
+/*
 const faceDetectionNet = faceapi.nets.ssdMobilenetv1;
 const faceDetectionOptions = new faceapi.SsdMobilenetv1Options({minConfidence});
+*/
+const faceDetectionNet = faceapi.nets.tinyFaceDetector;
+const faceDetectionOptions = new faceapi.TinyFaceDetectorOptions({minConfidence});
 
 let globalFrame = null;
 let lastFrame = null;
